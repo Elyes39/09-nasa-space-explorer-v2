@@ -142,3 +142,107 @@ button:hover {
   font-size: 48px;
   margin-bottom: 20px;
 }
+
+/* NASA-like branding tweaks */
+.site-header h1 {
+  color: #0b3d91; /* NASA deep blue */
+}
+
+button {
+  background-color: #0b3d91; /* blue */
+  color: #fff;
+  border: 0;
+}
+button:hover {
+  background-color: #082a6b;
+}
+
+/* Video placeholder for thumbnails without an image */
+.video-placeholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #0b3d91, #062645);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 48px;
+}
+.video-placeholder .play {
+  opacity: 0.95;
+}
+
+/* Modal overlay and content */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.modal {
+  background: #fff;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.modal .close-btn {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background: rgba(255,255,255,0.9);
+  border: 0;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.modal-media {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 70vh;
+  overflow: hidden;
+}
+.modal-media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.modal-media iframe {
+  width: 100%;
+  height: 60vh;
+  border: 0;
+}
+.modal-body {
+  padding: 18px 22px 28px 22px;
+}
+.modal-body h2 {
+  margin-bottom: 6px;
+  color: #0b3d91;
+}
+.modal-date {
+  margin-bottom: 12px;
+  color: #666;
+}
+.modal-explanation {
+  line-height: 1.55;
+  color: #333;
+}
+
+/* Make close button accessible on small screens */
+@media (max-width: 600px) {
+  .modal-media iframe { height: 40vh; }
+  .modal-body { padding: 14px; }
+}
+
