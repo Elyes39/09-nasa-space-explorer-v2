@@ -124,6 +124,17 @@ button:hover {
   border-radius: 4px;
 }
 
+/* Smooth hover zoom: use transform with transition and let the card clip overflow */
+.gallery-item img {
+  transition: transform 300ms ease, filter 300ms ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
 .gallery-item p {
   margin-top: 10px;
   padding: 5px;
@@ -172,6 +183,51 @@ button:hover {
 .video-placeholder .play {
   opacity: 0.95;
 }
+
+/* Play overlay for video thumbnails */
+.video-thumb {
+  position: relative;
+  cursor: pointer;
+}
+.video-thumb img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Apply same smooth zoom to video thumbnails */
+.video-thumb img {
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+.video-thumb:hover img {
+  transform: scale(1.05);
+}
+.video-thumb .play-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(11,61,145,0.85);
+  color: #fff;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+.video-link {
+  color: #0b3d91;
+  font-weight: bold;
+  text-decoration: none;
+}
+.video-link:hover { text-decoration: underline; }
 
 /* Modal overlay and content */
 .modal-overlay {
